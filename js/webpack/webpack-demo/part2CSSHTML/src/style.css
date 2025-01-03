@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('./exteriorContent/myFont.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+}
+.hello{
+  color:rgb(255, 255, 255);
+  background: url('./exteriorContent/dog.jpg');
+  background-repeat: no-repeat;
+  font-family: 'Myfont';
+}
+/* file must be imported into index.js */
+
+.background{
+  max-width: 150px;
+  height:auto;
+  margin-top: 10vh;
+}

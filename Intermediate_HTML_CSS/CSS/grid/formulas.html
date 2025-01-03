@@ -1,0 +1,36 @@
+grid-template-columns: minmax(100px, 1fr) 3fr; /* sets min and max value for col size. */
+<!-- /* USED MINMAX TO LIMIT SHRINKING WHEN ZOOMING OUT OR IN!!!!!!!! */ -->
+grid-template-columns: repeat(8, 1fr);
+<!-- will create 8 columns that are equal fractions of width -->
+
+grid-template-columns: repeat(8, minmax(10px, 1fr));
+  <!-- combines the two -->
+
+
+<!-- combining repeat with autofill/autofit
+autofit: fit whatever columnes there are into the space. Harder to use w/ empty cols
+autofill: fit as many possible cols on a row, even if empty.
+ -->
+grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+
+<!-- Masonry -->
+<!-- gives a brick pattern to the cells -->
+grid-template-rows: masonry; 
+
+
+<!-- grid-auto-flow: automatically populates nonspecified aspects of grid -->
+.container {
+    grid-auto-flow: row | column | row dense | column dense;
+} NOTE: dense may cause items to appear out of order.
+
+
+<!-- Items in a grid can be given their area with shorthand line ranges:
+        .item-a {
+            grid-column: 1 / 2;     1 through 2
+            grid-row: 2 / 3;        2 through 3
+            }
+        .item-b {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+            }  THIS ONE OVERFLOWS TO AUTO SETTINGS IF THERE AREN"T ENOUGH ROW/Col
+         -->

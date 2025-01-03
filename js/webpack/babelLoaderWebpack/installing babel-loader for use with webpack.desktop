@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=installing babel-loader for use with webpack
+Comment=
+Icon=user-bookmarks
+URL=https://github.com/babel/babel-loader

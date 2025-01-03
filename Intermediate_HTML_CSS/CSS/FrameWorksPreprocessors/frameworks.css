@@ -1,0 +1,20 @@
+/* A CSS framework is a bundle of CSS that you can use and access */
+
+https://getbootstrap.com/ /* Tons of different themes such as dashboard, headers etc. */
+/* Does a lot of heavy lifting on frequently used CSS code for you.
+Even icons and interactions such as menu dropdowns */
+
+https://tailwindcss.com/ /* USED BY SHOPIFY CHATGPT NETFLIX */
+/* Tailwind aim to change how css is applied
+by supplying pre-named classes that typically only apply to a single line of CSS each */
+
+/* Frameworks have different formatting, so review before implementing. */
+
+/* Other frameworks: */
+https://bulma.io/ /* used by signal, starbucks */
+https://get.foundation/ /* USED FOR THE SUBARU SITE PIXAR AND TONS MORE*/
+
+/* DISADVANTAGES OF FRAMEWORKS: 
+They're a crutch. You will not learn CSS as well as you should.
+Framework sites all look the same..
+*/

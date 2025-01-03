@@ -1,0 +1,51 @@
+<!-- The form element is a container followed by action
+    (Where the data should be sent) and finally the 
+    "method" which is usually either "get" or "post"
+
+GET: is used when we want to retrieve something from the server
+such as a search request.
+
+POST: is used when we want to change something on the server
+for example, when a user makes an account.-->
+
+    ex.
+    <form action="example.com/path" method="post">
+
+    </form>
+
+<!-- Form Controls:
+All interactable elements on the form (buttons, dropdowns etc) -->
+
+<!-- One of which is "input" -->
+<form action="example.com/path" method="post">
+    <input type="text">
+  </form>
+
+
+<!-- Labels:
+ -->
+ <form action="example.com/path" method="post">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name">
+  </form>
+
+  <!-- the label accepts "for" to associate it with an id -->
+
+
+  <!-- Placeholder Attribute -->
+  <label for="first_name">First Name:</label>
+<input type="text" id="first_name" placeholder="Bob...">
+
+<!-- Placeholder is used to guide users with an example, in 
+this case the text box will start with bob until entry is made. -->
+
+
+
+<!-- Name attribute:
+Used to let the backend know what the data represents -->
+
+<label for="first_name">First Name:</label>
+<input type="text" id="first_name" name="first_name">
+
+<!-- FORM DOESN'T REQUIRE BACK END.. CAN BE USED W/ VANILLA JS 
+to display data on the page.-->

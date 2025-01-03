@@ -1,0 +1,56 @@
+/* Scaling Text:
+
+DO: */
+html {
+    font-size: calc(0.75rem + 1.5vw);
+  }
+
+/* DON'T */
+html {
+    font-size: 2.5vw;
+  }
+  /* If you do, the user won't be able to resize the text. 
+  The text will be resizable if you mix in a relative unit—like em, rem or ch. 
+  The CSS calc() function is perfect for this. */
+
+
+  /* Clamping Text
+  The clamp() function is like the calc() function but
+   it takes three values. The middle value is the same 
+   as what you pass to calc(). The opening value 
+   specifies the minimum size, in this case 1rem so as 
+   to not go below the user's preferred font size. The 
+   closing value specifies the maximum size. */
+   html {
+    font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+  }
+
+  /* Line Length */
+  /* You can't set a line length directly in CSS. 
+  There is no line-length property. But you can stop text from 
+  getting too wide by limiting how wide the container can be. 
+  The max-inline-size property is perfect for this. */
+
+  /* DO: */
+
+  article {
+    max-inline-size: 66ch;
+  }
+  /* Using ch units for width will cause new lines to wrap at the 66th character at that font size.
+
+ */
+
+  /* Don't */
+  article {
+    max-inline-size: 700px;
+  }
+
+  /* Inline Height */
+  article {
+    max-inline-size: 66ch;
+    line-height: 1.65;
+  }
+  blockquote {
+    max-inline-size: 45ch;
+    line-height: 2;
+  }

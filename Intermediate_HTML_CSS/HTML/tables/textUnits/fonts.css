@@ -1,0 +1,39 @@
+/* If you use the font-family property to change to a font like impact or Times New Roman, 
+and those fonts do not happen to be installed on your user’s computer, 
+then a fallback font will be displayed. If you have not defined a fallback,
+ then the default HTML font will be used, */
+
+
+
+ body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* when this is implemented, it will go through this list front
+    start to end until it finds a font that the computer has installed. */
+}
+
+/* WEB HOSTED FONTS */
+
+/* If a font will not be available on users' pc, font must be imported. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* This is an example of importing font to css */
+
+/* SELF HOSTED FONTS */
+
+@font-face { /* imports and defines the font */
+    font-family: my-cool-font;
+    src: url(../fonts/the-font-file.woff);
+  }
+  
+  h1 {
+    font-family: my-cool-font, sans-serif; /* applies font with backup just in case */
+  }
+
+
+  /* open source fonts at: */ 
+  https://www.theleagueofmoveabletype.com/
+  https://www.fontsquirrel.com/
+  https://www.dafont.com/
+  https://everythingfonts.com/
+
+  /* Web font generator */
+  https://www.fontsquirrel.com/tools/webfont-generator

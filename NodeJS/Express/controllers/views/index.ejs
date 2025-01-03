@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1><%= locals.message %></h1> <!-- allows object.key form or standard as is used with links -->
+
+  <%- include('navbar', {links: links}) %> <!-- links passed from appEJS -->
+
+  <ul>
+    <% users.forEach(user => { %>
+      <%- include('user', {user: user}) -%>
+    <% }) %> 
+    
+  </ul>
+</body>
+</html>
+<!-- install and enabled "EJS Language Support" VSCode Plugin-->

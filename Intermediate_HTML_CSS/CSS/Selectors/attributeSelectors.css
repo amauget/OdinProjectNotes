@@ -1,0 +1,63 @@
+  /* Child selector */
+  h1>p /* Where p is a child of h1 */
+
+  /* sibling selector */
+  h1~p /* Where h1 and p share a common parent. */
+
+  /* Adjacent sibling selector */
+  h1 + p /* Where p is directly next to h1. all other p's will be omited. */
+
+
+
+[attribute] - This general selector will select anything where the given attribute exists. Its value doesn’t matter.
+
+selector[attribute] - Optionally we can combine our attribute selectors with other types of selectors, such as class or element selectors.
+
+[attribute="value"] - To get really specific, we can use = to match a specific attribute with a specific value.
+
+[src] {
+    /* This will target any element that has a src attribute. */
+  }
+
+  img[src] {
+    /* This will only target img elements that have a src attribute. */
+  }
+
+  img[src="puppy.jpg"] {
+    /* This will target img elements with a src attribute that is exactly "puppy.jpg" */
+  }
+
+  /* Can also be used to isolate letters, file types, etc */
+  [class^='aus'] {
+    /* Classes are attributes too!
+      This will target any class that begins with 'aus':
+      class='austria'
+      class='australia'
+    */
+  }
+  [src$='.jpg'] {
+    /* This will target any src attribute that ends in '.jpg':
+    src='puppy.jpg'
+    src='kitten.jpg'
+    */
+  }
+  
+  [for*='ill'] {
+    /* This will target any for attribute that has 'ill' anywhere inside it:
+    for="bill"
+    for="jill"
+    for="silly"
+    for="ill"
+    */
+  }
+
+  /* Attibute Hyphenated Selectors
+  When an attribute value is hyphen-separated, rather than whitespace-separated, the vertical line character, |,
+   may be used within the square brackets of a selector between the attribute name and equals sign. The vertical
+    line denotes that the attribute value may be hyphen-separated however the hyphen-separated words must begin with the stated value. */
+
+CSS
+a[lang|="en"] {...}
+
+HTML
+/* <a href="#" lang="en-US">...</a> */

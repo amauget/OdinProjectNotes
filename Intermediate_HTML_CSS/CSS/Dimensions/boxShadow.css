@@ -1,0 +1,27 @@
+/* The box-shadow property enables you to cast a drop shadow from the frame of 
+almost any element. If a border-radius is specified on the element with a box
+shadow, the box shadow takes on the same rounded corners. */
+
+/* A color and two length values */
+/* <color> | <length> | <length> */
+box-shadow: red 60px -16px;
+
+/* Four length values and a color */
+/* <length> | <length> | <length> | <length> | <color> */
+box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+
+/* inset (inside box), length values, and a color */
+/* <inset> | <length> | <length> | <color> */
+box-shadow: inset 5em 1em gold;
+
+/* Shadows require min 2 lengths and max 4 */
+
+/* Mixing inset and exterior shadows */
+
+blockquote {
+    padding: 20px;
+    box-shadow:
+      inset 0 -3em 3em rgb(0 200 0 / 30%), /* Interior shadowing */
+      0 0 0 2px white, /* This is shadowing on inset shadow, creates a blending effect. */
+      0.3em 0.3em 1em rgb(200 0 0 / 60%);/* exterior */
+  }

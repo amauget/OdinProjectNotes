@@ -1,0 +1,81 @@
+/* Custom properties also called CSS variables
+using the properties can allow a property to be set once and applied
+to many elements, for example*/
+
+/* custom properties start with -- 
+ex.
+*/
+.error-modal {
+    --color-error-text: red;
+    --modal-border: 1px solid black;
+    --modal-font-size: calc(2rem + 5vw);
+  
+    color: var(--color-error-text);
+    border: var(--modal-border);
+    font-size: var(--modal-font-size);
+  }
+  /* Must-use-kebab-space as well*/
+
+  /* Fallback Values */
+
+  /* Var() accepts two parameters
+  first is the custom property we want to assign
+  second is a fallback value in case our value is invalid */
+  background-color: var(--undeclared-property, black);
+
+  /* can also have nested fallback as seen below to try --color-text before yellow */
+  color: var(--undeclared-again, var(--color-text, yellow));
+
+
+  /* SCOPE */
+  /* declared vars will only be allowed within the scope that it was declared
+  they can't be returned, THAT'S WHERE DECLARING IN ROOT COMES IN */
+
+  :root {
+    --main-color: red;
+  }
+  
+  .cool-paragraph {
+    color: var(--main-color);
+  }
+  
+  .exciting-paragraph {
+    background-color: var(--main-color);
+  }
+  /* This approach allows var everywhere since all elements are
+  children of root
+   */
+   
+
+/* @property can set a mulitiude of preferences under a single var */
+@property --box-color {
+  syntax: "<color>";
+  initial-value: cornflowerblue; 
+  inherits: false; /* false determines whether the color is 
+  inherited or sticks to :root default */
+}
+
+.one {
+  --box-color: aquamarine;
+  background-color: var(--box-color);
+}
+
+.two {
+  --box-color: aqumarine;
+  background-color: var(--box-color);
+}
+
+.three {
+  --box-color: 2rem;
+  background-color: var(--box-color);
+}
+
+/* USING CUSTOM PROPERTIES IN JS */
+// get variable from inline style
+element.style.getPropertyValue("--my-var");
+
+// get variable from wherever
+getComputedStyle(element).getPropertyValue("--my-var");
+
+// set variable on inline style
+element.style.setProperty("--my-var", jsVar + 4);

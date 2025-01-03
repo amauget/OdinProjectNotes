@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#" alt="">
+  <label for="search">Search Gifs</label>
+  <input type="search" id="search" value="dog">
+  <button>search</button>
+  <div class="selected"></div>
+  <div class="resultContainer"></div>
+
+</body>
+<script>
+  const button = document.querySelector('button');
+  const search = document.querySelector('#search');
+  let img = document.querySelector('img')
+  img.src = '#'
+  button.addEventListener(('click'), () =>{
+    let resultContainer = document.querySelector('.resultContainer');
+
+    let searchQuery = (search.value).replace(' ', '+');
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=vzHJ1H8eKSKlAXIvb5e0V6knNLRCzNju&q=${searchQuery}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`)
+    .then(function(item){
+      return item.json();
+    })
+    .then(function(item){
+      let results = (item.data)
+      resultContainer.innerHTML = '';
+      for(let i = 0; i < 8; i++ ){
+        let address = results[i].images.original.url;
+    
+        let img = document.createElement('img');
+        img.src = address
+
+        resultContainer.appendChild(img);
+        
+      } 
+      return results;
+    })
+    .then(function(results){
+      for(let i = 8; i < 16; i++){
+        let address = results[i].images.original.url;
+    
+        let img = document.createElement('img');
+        img.src = address
+
+        resultContainer.appendChild(img);
+        
+      }
+      return results;
+    })
+    .then(function(results){
+      for(let i = 16; i < 25; i++){
+        let address = results[i].images.original.url;
+    
+        let img = document.createElement('img');
+        img.src = address
+
+        resultContainer.appendChild(img);
+        
+      }
+      return results;
+    })
+    .then(function(){
+      let imgs = document.querySelectorAll('img');
+      let selectedContainer = document.querySelector('.selected');
+      for(let i = 0; i < imgs.length; i++){
+        imgs[i].addEventListener('click', () =>{
+          selectedContainer.appendChild(imgs[i])
+        })
+      }
+    }).catch(function(error){
+      alert('No results found');
+    })
+    
+   
+  })
+ 
+
+    /* NOTE if gify responds with status of 200 to search query, no results found 
+    `https://api.giphy.com/v1/gifs/search?api_key=vzHJ1H8eKSKlAXIvb5e0V6knNLRCzNju&q=${searchQuery.replace(' ', '+')}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`
+    */
+</script>
+<style>
+  img{
+    height: 20vh;
+    width: auto;
+  }
+  .resultContainer{
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat((2, auto));
+    
+  }
+</style>
+</html>

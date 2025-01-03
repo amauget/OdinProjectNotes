@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form novalidate> <!-- turns off browser aut validation -->
+    <p>
+      <label for="mail">
+        <span>Please enter email:</span>
+      <input type="email" name="mail" id="mail" required minlength="8">
+
+      <span class="error" aria-live="polite"></span> <!-- aria-live means that the message will be presented to everyone, including screen readers. -->
+    </label>
+
+    </p>
+    <button>Submit</button>
+  </form>
+</body>
+<script>
+  const form = document.querySelector('form');
+  const email = document.querySelector('#mail');
+  const emailError = document.querySelector('#mail + span.error');
+
+  email.addEventListener('input', (event) =>{
+    if(email.validity.valid){
+      /* in case there is an error message visible, if field becomes valid, error message removed. */
+      emailError.textContent = '';
+      emailError.className = 'error';
+    }else{
+      // if error still exists, show correct error.
+      showError();
+    }
+
+  })
+
+  form.addEventListener('submit', (event) =>{
+    if(!email.validity.valid){
+      showError();
+      // Then prevent form from being submitted.
+      event.preventDefault(); 
+    }
+  })
+
+  function showError(){
+    if(email.validity.valueMissing){ /* global variable.. gross. */
+      // if field is empty,
+      emailError.textContent = 'Email address required.';
+    }else if(email.validity.typeMismatch){
+      emailError.textContent = 'Entered value needs to be an email address.';
+    } else if(email.validity.tooShort){
+      emailError.textContent = `Email should be at least ${email.minLength} characters.`; 
+    }
+    //set the styling appropriately
+    emailError.className = 'error active';
+  }
+
+</script>
+<style>
+  body {
+  font: 1em sans-serif;
+  width: 200px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+p * {
+  display: block;
+}
+
+input[type="email"] {
+  appearance: none;
+
+  width: 100%;
+  border: 1px solid #333;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 90%;
+
+  box-sizing: border-box;
+}
+
+/* This is our style for the invalid fields */
+input:invalid {
+  border-color: #900;
+  background-color: #fdd;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+/* This is the style of our error messages */
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+</style>
+</html>

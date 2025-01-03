@@ -1,0 +1,35 @@
+/* Dynamic and user action pseudo-classes
+These types of useful pseudo-classes can 
+make your page feel much more dynamic and interactive. */
+
+/* Negatation pseudoClass */
+div:not(.awesome) {...}
+:not(div) {...}  /* Both ommit div */
+
+:focus /* applies to an element that is currently selected by the user either through selecting it with their cursor or using their keyboard.*/
+:hover
+:active/* :active applies to elements that are currently being clicked, and 
+            is especially useful for giving your user feedback that their action 
+            had an effect. This is a great one to give your buttons and other 
+            interactive elements more ‘tactile’ feedback */
+
+:link /* Causes link to be blue */
+:visited /* Causes link to turn purple when clicked. THESE COLORS CAN BE ALTERED */
+:root /* A special class that represents the very top level of doc (usually HTML) */
+/* :root is where global CSS rules usuallly go that you want available everywhere. */
+
+:first-child & :last-child /* Isolate the first or last child of a container */
+
+:empty /* Targets elements with no children */
+
+:only-child /* Targets if only one child */
+:nth-child()/* flexible. allows selection of odd even or special rules */
+
+/* Examples of nt-child */
+.class:nth-child(5) /* Selects the 5th element with class myList */
+
+.class:nth-child(3n)  /* Selects every 3rd element with class myList */
+
+.class:nth-child(3n + 3)  /* Selects every 3rd element with class myList, beginning with the 3rd */
+
+.class:nth-child(even) /* Selects every even element with class myList */

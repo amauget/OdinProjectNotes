@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- index.html -->
+
+<div class="container">
+    <div>Item 1</div>
+    <div class="item2">Item 2
+      <!-- <p>I am not a grid item!</p>
+      <p>Neither am I!</p> -->
+    </div>
+    <div>Item 3</div>
+    <div>Item 4</div>
+    <div>Item 5</div>
+    <div>Item 6</div>
+  </div>
+  
+</body>
+
+<style>
+    .container{
+        display:grid;
+        background-color: gray;
+       /*  grid-template-columns: 8vw 8vw 8vw; */ /* Specifies how many cols and width between */
+       /*  grid-template-rows: 8vw 8vw; */ /* Same but for rows */
+
+        /* OR
+        grid-template: padding&rowCount / padding&ColCount */
+
+        grid-template: 8vh 8vh / 8vh 8vh 8vh;
+
+        border:1px black solid;
+    }
+   
+</style>
+</html>

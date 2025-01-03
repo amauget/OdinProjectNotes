@@ -1,0 +1,59 @@
+
+/* Viewport Width => vw
+viewport height => vh
+A percengtage of full viewport width
+10vw = 10% of current Viewport width
+
+veiwport minimum/maximum => vmin/vmax:
+vmin => a percentage of viewport width or height based on the SMALLER 
+        value.
+
+For example, a landscape oriented doc with vmin = 10
+will have 10% viewport value to the vertical elements of page because
+this is the smaller dimension.*/
+
+/* vmax => percentage but focuses on the LARGER value.  */
+
+
+
+/* NOTE: Don't use any of the above alone with text elements. instead 
+do this;
+ */
+ body {
+     /* font grows 1px for every 100px of viewport width */
+    font-size: calc(16px + 1vw);
+    /* // leading grows along with font,
+    // with an additional 0.1em + 0.5px per 100px of the viewport */
+    line-height: calc(1.1em + 0.5vw);
+  }
+
+  /* Full-Height Layouts*/
+  body {
+    height: 100vh;
+  }
+  /* gives the body a max height of the viewport height
+  MUST APPLY OVERFLOW PROPERTIES TO INTERNAL ELEMENTS LIKE ONE BELOW: */
+  nav, article {
+    overflow-y: auto;
+  }
+
+
+  /* Sticky Footers */
+  /* footer can be fixed to the bottom by alerting body height to 
+  "min-height" */
+  body {
+    min-height: 100vh;
+  }
+
+  /* Creating Fluid Aspect ratios */
+  /* max-width * aspect-ratio */
+.full-width {
+    width: 100vw; /* Gives element 100% viewport width */
+    max-width: 30em; /* Caps width for zoom */
+    height: calc(100vw * (9/16)); /* Calculates height*9 / 16 */
+    max-height: calc(30em * (9/16));
+  }
+  /* More on this: https://cloudfour.com/thinks/breaking-out-with-viewport-units-and-calc/ */
+
+
+  /* Breaking a constrained container */

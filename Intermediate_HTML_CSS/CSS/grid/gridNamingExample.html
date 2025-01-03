@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+        <div class="four">Four</div>
+        <div class="five">Five</div>
+      </div>
+</body>
+<style>
+    .wrapper{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);        
+        grid-auto-rows: 100px;
+        background:#fce1c0;
+        border:2px solid rgba(0, 0, 0, 0.404);
+
+    /*  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+        grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+        grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+        grid-row-end: <number> | <name> | span <number> | span <name> | auto; */
+    }
+    .wrapper>div{
+        border: 2px solid #ffa94d;
+        border-radius: 5px;
+        background-color: #ffd8a8;
+        padding: 1em;
+        color: #d9480f;
+
+    }
+
+    .one{
+        grid-column-start:1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end:3;
+        background:gray;
+    }
+    .two{
+        grid-column-start: 1;
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+    *{
+        box-sizing: border-box;
+    }
+</style>
+</html>

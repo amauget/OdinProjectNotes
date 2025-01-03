@@ -1,0 +1,6 @@
+/* pseudo elements allow us to affect parts of HTML that aren't elements at all. */
+::marker /*  allows you to customize the styling of your <li> elements’ bullets or numbers. */
+::first-letter
+::first-line
+::selection /*  allows you to change the highlighting when a user selects text on the page.*/
+::before and ::after allow us to add extra elements onto the page with CSS, instead of HTML. Using it to decorate text in various ways is one common use case.

@@ -1,0 +1,18 @@
+<!-- Do not use multiple lables for a single form or radio etc -->
+
+<!-- creating required labels: -->
+<label for="username">
+    <span>Name:</span> <!-- Similar to div. used for text labeling -->
+    <input id="username" type="text" name="username" required>
+    <span aria-label="required">*</span> <!-- This line inserts * for the required element -->
+  </label>
+
+<meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50">at 50/100</meter>
+<!-- Meter allows for a progress type bar that fills based on fractional value in this case,
+it fills halfway -->
+
+<label for="file">
+  <span>file progress</span>
+</label>
+<progress id="file" max="100" value="70">70%</progress>
+<!-- Similar to meter, but used for file progress. can be updated when progressing pages for example -->

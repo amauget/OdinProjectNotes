@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #table-example-1 { 
+    border: solid thin; 
+    border-collapse: collapse; 
+    }
+
+    #table-example-1 caption { 
+    padding-bottom: 0.5em; 
+    }
+
+    #table-example-1 th, 
+    #table-example-1 td { 
+    border: solid thin;
+    padding: 0.5rem 2rem;
+    }
+
+    #table-example-1 td {
+    white-space: nowrap;
+    }
+
+    #table-example-1 th { 
+    font-weight: normal; 
+    }
+
+    #table-example-1 td { 
+    border-style: none solid; 
+    vertical-align: top; 
+    }
+
+    #table-example-1 th { 
+    padding: 0.2em; 
+    vertical-align: middle; 
+    text-align: center; 
+    }
+
+    #table-example-1 tbody td:first-child::after { 
+    content: leader(". ");
+    }
+
+    body {
+    padding: 1rem;
+    }
+</style>
+<body>
+    <table id="table-example-1"><caption>Specification values: <b>Steel</b>, <b>Castings</b>,
+        Ann. A.S.T.M. A27-16, Class B;* P max. 0.06; S max. 0.05.</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Grade.</th>
+                <th rowspan="2">Yield Point.</th>
+                <th colspan="2">Ultimate tensile strength</th>
+                <th rowspan="2">Per cent elong. 50.8&nbsp;mm or&nbsp;2&nbsp;in.</th>
+                <th rowspan="2">Per cent reduct. area.</th>
+            </tr>
+            <tr>
+                <th>kg/mm<sup>2</sup></th>
+                <th>lb/in<sup>2</sup></th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hard</td>
+                <td>0.45 ultimate</td>
+                <td>56.2</td>
+                <td>80,000</td>
+                <td>15</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>Medium</td>
+                <td>0.45 ultimate</td>
+                <td>49.2</td>
+                <td>70,000</td>
+                <td>18</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Soft</td>
+                <td>0.45 ultimate</td>
+                <td>42.2</td>
+                <td>60,000</td>
+                <td>22</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

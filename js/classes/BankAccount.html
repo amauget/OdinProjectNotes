@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Create a BankAccount class that deposits and withdraws money
+    if the balance permits.
+  
+    the BankAccount class should have instance vars 'owner' & 'balance'
+
+    implements methods deposit and withdraw.
+
+    if not enough money for withdrawl, return 'insufficient funds'
+  -->
+</body>
+<script>
+  class BankAccount{
+    constructor(name, balance){
+      this.name = name;
+      this.balance = balance;
+    }
+    currentBalance(){
+     alert(`Your current balance is $${this.balance}`);
+    }
+
+    accountOwner(){
+      alert(`Hello, ${this.name}`)
+    }
+    widthdrawl(){
+        let amount = parseFloat(prompt("how much would you like to widthdraw?: ").replace('$',''))
+
+        if(amount > this.balance){
+        alert('insufficient funds. Type "Stop" to exit.')
+        }
+        else if(amount <= this.balance){
+          alert(`$${amount} is being vended.`)
+          this.balance = this.balance - amount;
+          return this.balance;
+        }
+    }
+    deposit(){
+      let depositAmount =  parseFloat(prompt("how much would you like to deposit?: ").replace('$',''))
+      return this.balance = this.balance + depositAmount;
+    } 
+  }
+    
+  let balance = parseFloat(("$2000").replace('$',''));
+  let holder = new BankAccount('John', balance)
+  // holder.accountOwner();
+  holder.currentBalance();
+  holder.deposit();
+  holder.currentBalance();
+
+</script>
+</html>

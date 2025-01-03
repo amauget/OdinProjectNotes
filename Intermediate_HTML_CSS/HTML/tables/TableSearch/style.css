@@ -1,0 +1,17 @@
+table{
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+thead{
+    background: rgb(54, 54, 54);
+    color: white;
+    
+}
+#title{
+    background-color: rgba(0, 102, 128, 0.411);
+    
+}
+td,th{
+    padding: 0.5rem;
+    border: black 1px solid;
+}

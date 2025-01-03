@@ -1,0 +1,35 @@
+/* static positioning is default */
+
+
+/* Positioning:
+ */
+ position: absolute /* Allows you to position something at an exact point without
+                    disturbing other elements. Completely removes from doc flow,
+                    allowing for overlays without changing other elements. */
+
+/* Using absolute positioning allows you to position elements anywhere on the screen using 
+top, right, bottom, and left properties.  */
+
+if you want absolute to position relative to its parent class, parent class
+MUST have a position other than static
+
+/* Absolute positioning also allows you to place text over an image and to layer in general.. */
+
+/* FIXED POSITIONING: */
+/* Removed from normal flow of page and are positioned relative to the viewport.
+Also use top right bottom and left. */
+
+/* STICKY POSITIONING: */
+/* Sticky items behave like normal elements until they are scrolled past.
+Then they affix to the top of the view port until their original position is 
+back within viewport. */
+
+/* RELATIVE:
+removed from document flow and given relative position to the page */
+
+/* TOP RIGHT LEFT BOTTOM format example */
+
+position:fixed;
+top:0vh or just 0;
+left:10vh
+etc

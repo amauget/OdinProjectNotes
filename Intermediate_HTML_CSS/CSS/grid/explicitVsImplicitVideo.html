@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div> <!-- From here on are implicit because only 2 rows/cols specified -->
+        <div class="six">6</div>
+    </div>
+</body>
+<style>
+    :root{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background:linear-gradient(to left, rgb(89, 0, 255), white)
+    }
+    .container{
+        
+        display: grid; 
+        font-size: 2rem;
+        grid-template: 1fr 1fr / 1fr 2fr;
+        gap: 16px;
+        width:65%;
+        padding-top: 10%;
+        grid-auto-rows: 1fr; /* implicit condition */
+        
+    }
+    .container>div{
+        border:1px black solid;
+        background-color: rgb(255, 174, 0);
+    }
+</style>
+</html>

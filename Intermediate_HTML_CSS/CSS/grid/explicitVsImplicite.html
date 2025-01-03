@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+      </div>
+     
+</body>
+<style>
+    .container {
+        display: inline-grid;
+        grid-template-columns: 50px 50px;
+        grid-template-rows: 50px 50px;
+    }
+
+    /* The 5th item layout behavior is not defined. This is 
+    IMPLICIT grid because it'll output to the bottom left. */
+
+    /* The EXPLICIT grid traits are the 4 that were defined */
+
+    /* Defining implicit grid traits: */
+
+    .container{
+        grid-auto-rows: 50px; /* All implicit items will be given their own row with defined margin */
+    }
+
+    /* GAP */
+    .container>div{
+        border:1px solid black;
+    }
+
+    .container{
+        column-gap: 10px;
+        row-gap: 10px;
+        /* or just gap to do both at once */
+    }
+</style>
+</html>

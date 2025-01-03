@@ -1,0 +1,30 @@
+<!-- Select DropDown
+using <select> allows for <option> dropdowns -->
+<select name="Car">
+  <option value="mercedes">Mercedes</option>
+  <option value="tesla">Tesla</option>
+  <option value="volvo">Volvo</option>
+  <option value="bmw">BMW</option>
+  <option value="mini">Mini</option>
+  <option value="ford">Ford</option>
+</select>
+<!-- All the option elements should have a value attribute
+ (otherwise the text content inside is used). 
+ This value will be sent to the server when the form is submitted. -->
+
+ <option value="volvo" selected>Volvo</option> <!-- can be added
+to give a default selection in the dropdown -->
+
+<!-- subdivide dropdowns: -->
+<select name="fashion">
+    <optgroup label="Clothing">
+      <option value="t_shirt">T-Shirts</option>
+      <option value="sweater">Sweaters</option>
+      <option value="coats">Coats</option>
+    </optgroup>
+    <optgroup label="Foot Wear">
+      <option value="sneakers">Sneakers</option>
+      <option value="boots">Boots</option>
+      <option value="sandals">Sandals</option>
+    </optgroup>
+  </select>

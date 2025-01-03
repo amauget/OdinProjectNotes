@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Sign up now!</h1>
+    </div>
+    <fieldset> <!-- NOTE! This element should be limited to a single form and its widgets 
+    and should be contained within the form. Not the other way around. -->
+        <!-- Name -->
+        
+        <form class="name" action="example.com/path" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" >
+        </form>
+        
+        <!-- email -->
+        
+        <form class="email" action="example.com/path" method="post">
+            <label for="user_email">Email:</label>
+            <input type="text" id="user_email" name="email" placeholder="jon.doe@outlook.com">
+        </form>
+        <form class="password" action="example.com/path" method="post">
+            <label for="password">Password:</label>
+            <input type="password" placeholder="*******" id="password">
+            
+        </form>
+        <button type="submit">Submit</button>
+       
+        <!-- message -->
+        <form class="note" action="example.com/path" method="post">
+            <label for="note">Note to Dev:</label>
+            <textarea name="note" id="note" cols="40" rows="30"></textarea>
+            <div class="noteButtons">
+                <button type="submit">Submit</button>
+                <button type="clear">Clear</button>
+            </div>
+            
+        </form>
+    </fieldset>
+    <div class="footer">
+        <p>The odin project</p>
+        <p>Also.. I'm gonna spam your email :D</p>
+    </div>
+</body>
+<link rel="stylesheet" href="firstForm.css">
+
+</html>

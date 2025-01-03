@@ -1,0 +1,4 @@
+This section is to only be used after the production phase of a project is done..
+
+EXCEPT FOR LIVE REFRESH.. can be found in package.json and webpakc.config.js
+package.json notes are located in print.js

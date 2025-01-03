@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Table Headers accomodate screen readers by classifying it as a
+    label instead of data add scope to differentiate between row and column
+    headers IE. -->
+
+    <thead>
+        <tr>
+          <th scope="col">Purchase</th>
+          <th scope="col">Location</th>
+          <th scope="col">Date</th>
+          <th scope="col">Evaluation</th>
+          <th scope="col">Cost (€)</th>
+        </tr>
+    </thead>
+
+    <tr>
+    <th scope="row">Haircut</th>
+    <td>Hairdresser</td>
+    <td>12/09</td>
+    <td>Great idea</td>
+    <td>30</td>
+    </tr>
+
+    <!-- there are also scopes "colgroup" & "rowgroup" for lables that 
+    categorize a row or column.
+     -->
+
+     <thead>
+        <tr>
+          <th colspan="3" scope="colgroup">Clothes</th>
+        </tr>
+        <tr>
+          <th scope="col">Trousers</th>
+          <th scope="col">Skirts</th>
+          <th scope="col">Dresses</th>
+        </tr>
+      </thead>
+
+    <!-- id and headers can be used as an alternative as seen below -->
+    <thead>
+        <tr>
+          <th id="clothes" colspan="3">Clothes</th>
+          <!-- Parent header that spans 3 -->
+        </tr>
+        <tr>
+          <th id="trousers" headers="clothes">Trousers</th>
+          <th id="skirts" headers="clothes">Skirts</th>
+          <th id="dresses" headers="clothes">Dresses</th>
+          <!-- children headers -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="belgium" rowspan="3">Belgium</th>
+          <!-- Parent row header spans 3 -->
+          <th id="antwerp" headers="belgium">Antwerp</th>
+          <td headers="antwerp belgium clothes trousers">56</td>
+          <td headers="antwerp belgium clothes skirts">22</td>
+          <td headers="antwerp belgium clothes dresses">43</td>
+        </tr>
+      </tbody>
+      
+</body>
+</html>

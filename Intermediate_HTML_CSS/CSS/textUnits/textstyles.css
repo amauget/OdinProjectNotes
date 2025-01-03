@@ -1,0 +1,16 @@
+/* Different text attributes not related to font family. */
+h1 {
+    font-style: italic; 
+    letter-spacing: .5em; /* Can cram or space lettering */
+    line-height: 1.5;
+    text-transform: capitalize; /* used for changing the txt case of an element. */
+    text-shadow:2rem; 
+}
+
+/* Ellipsis */
+
+.overflowing {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* allows overflow to occur even if wrapping is disabled */
+  }

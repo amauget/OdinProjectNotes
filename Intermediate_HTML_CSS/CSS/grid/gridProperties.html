@@ -1,0 +1,92 @@
+<!-- PROPERTIES FOR THE PARENT CONTAINER:
+    display: 
+            Values:
+
+            grid: width to fit page body
+            inline-grid: creates grid with width to fit properties (likely narrower)
+
+    grid-template-columns:
+            Values:
+
+            track-size: can be a length, percentage, or a fraction of
+                        the free space in the grid. uses "fr" unit (fraction)
+                        The fr unit will span width unit, so if 2fr is used on a column,
+                        it'll have the width of 2 other columns, with a proportion of 1/4, 1/4, 1/2 in total.
+
+            line-name:  rows & columns can be given arbitrary names for referencing style.
+                        
+                        .container {
+                                grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+                                grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+                                }
+
+                        open HTML to see diagram on this
+
+                        lines can have more than one name:
+
+                        grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+
+            repeat:
+                        can be used to streamline line-names to apply a pattern of traits to a grid.
+                        ie. 
+                        grid-template-columns: repeat(3, 20px [col-start]); ===  grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+
+            /* e.g. 
+                1fr 1fr
+                minmax(10px, 1fr) 3fr
+                repeat(5, 1fr)
+                50px auto 100px 1fr
+            */
+                -->
+
+
+    <!-- PROPERTIES OF THE CHILD ELEMENTS 
+        
+        grid-column-(start/end) 
+        and grid-row-(start/end):       Determines a grid item's location within the grid.
+                                        Done by referring to the grid lines. 
+                                        grid-column/row-start is the line where the item begins.
+                                        grid-column/row-end is where the item ends.
+
+                    values:
+                            line: can be a number to refer to a numbered grid line or a name to refer to a named grid line.
+                            span: item will span accross provided number of grid tracks.
+                            auto: automatically spans placement.. default span of one.
+
+                    Naming Conventions:
+                            .item {
+                                grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+                                grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+                                grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+                                grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+                                }
+
+                        example:
+                            .item-a {
+                                grid-column-start: 2;
+                                grid-column-end: five;
+                                grid-row-start: row1-start;
+                                grid-row-end: 3;
+                                }
+                                gives an item area col 2 through five, 
+                                row 1 through 3
+
+                            here is the diagram: https://css-tricks.com/wp-content/uploads/2018/11/grid-column-row-start-end-01.svg
+
+
+
+    -->
+               
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+        <body>
+            <img src="https://css-tricks.com/wp-content/uploads/2018/11/template-column-rows-02.svg" alt="">
+        </body>
+        </html>

@@ -1,0 +1,27 @@
+/* Media Queries:
+This checks for user settings in individual's browser */
+prefers-color-scheme /* Checks whether a user has a theme preference
+on their OS/user agent.  */
+:root {
+    --border-btn: 1px solid rgb(36, 36, 36);
+    --color-base-bg: rgb(240, 240, 240);
+    --color-base-text: rgb(18, 18, 18);
+    --color-btn-bg: rgb(220, 220, 220);
+    --theme-name: "light";
+  }
+@media (prefers-color-scheme: dark) {
+    :root {
+      --border-btn: 1px solid rgb(220, 220, 220);
+      --color-base-bg: rgb(18, 18, 18);
+      --color-base-text: rgb(240, 240, 240);
+      --color-btn-bg: rgb(36, 36, 36);
+      --theme-name: "dark";
+    }
+    /* This provides a decorative theme of root for dark theme */
+  }
+/* This defines the variables based on color-scheme condition */
+
+/* 3 things to be aware of:
+1. only dark and light are valid values for media query
+2. the light value is for when user has light theme or no preference set
+3. It doesn't allow the user to change theme themselves */

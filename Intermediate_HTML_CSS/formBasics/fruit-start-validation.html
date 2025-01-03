@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="choose">Would you prefer a banana or cherry?</label>
+        <input id="choose" name="i-like" required pattern="[Bb]anana|[Cc]herry|BANANA|CHERRY"/>
+        <!-- pattern allows for 1 of the 2 fruits accounting for capital -->
+        <button>Submit</button>
+      </form>
+</body>
+<style>
+    input:invalid:required{
+        background-image: linear-gradient(to right, pink, lightgreen);
+    }
+    
+    input:invalid{
+        border:2px red dashed;
+    }
+    input:valid{
+        border:2px solid green;
+    }
+</style>
+</html>

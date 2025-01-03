@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<body>
+   <!-- You create a table with <table></table> tags and then put the 
+    elements for rows, columns, headers, or anything else that’s possible 
+    inside those table elements.
+ -->
+    table>(tr>th*2)+(tr>td*2)
+    <table>
+        <tr>
+            <th>First Header</th>
+            <th>Second Header</th>
+        </tr>
+        <tr>
+            <td>Data Cell</td>
+            <td>Also a Data Cell</td>
+        </tr>
+    </table>
+
+    <style>
+        table, td, th{
+            border: 1px solid black;
+        }
+    </style>
+</body>
+</html>

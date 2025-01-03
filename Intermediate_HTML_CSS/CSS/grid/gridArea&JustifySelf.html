@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+        <div class="four">Four</div>
+        <div class="five">Five</div>
+        <div class="six">Six</div>
+    </div>
+</body>
+<style>
+    /* grid area can give start and end for rows/cols on an item */
+    /* .item {
+  grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end>;
+} */
+    .container{
+        display:grid;
+        grid-template-columns: minmax(100px, 1fr) 3fr; /* sets min and max value for col size. */
+        /* USED MINMAX TO LIMIT SHRINKING WHEN ZOOMING OUT OR IN!!!!!!!! */
+        grid-template-rows: 1fr 1fr;
+        grid-auto-flow: 1fr;
+        height:50vh;
+        border:3px gray solid;
+        background: linear-gradient(to right, black, white);
+        color:white;
+    }
+    .container>div{
+        border:1px red solid;
+    }
+    .two{
+        grid-column-start:2;
+        grid-column-end: -1;
+    }
+    .three{
+        grid-column-start:1;
+        grid-column-end: -1;
+        /* Defining a height for 3 will cause a gap below item if container is larger than combined heights */
+        height:10vh;
+    }
+    .four, .five, .six{
+
+        background-color: rgba(0, 255, 255, 0.226);
+        justify-self: left; /* justify-self: start | end | center | stretch; */
+        /* stretch will fill row of cell */
+        
+        align-self: center;
+        place-self: center;
+    }   
+    .six{
+        color:black;
+    }
+</style>
+</html>

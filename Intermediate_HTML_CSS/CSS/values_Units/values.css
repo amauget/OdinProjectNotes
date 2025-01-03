@@ -1,0 +1,67 @@
+/* EM vs REM:
+em is based on the text size of the parent object
+rem is based on the HTML traits 
+
+USE REM */
+
+html{
+    font-size: 16px;
+    /* 1rem = 16px */
+    line-height: 8px;
+}
+
+/* Line height units: */
+
+/* lh vs rlh
+Same relationship as em and rem..
+
+USE RLH as it references HTML*/
+
+p {
+    margin: 0;
+    background-image: repeating-linear-gradient( /* This trait adds notebook lines under the text */
+      to top,
+      rgba(72, 168, 228, 0.808) 0 2px, /* NoteBook line color */
+      transparent 2px 1.2rlh /* rlh references the HTML line height and multiplies by 1.2*/
+    );
+  }
+
+  /* Percentages can be used for relative sizing of the parent element */
+
+  li {
+    font-size: 110%;
+    /* This means that the li will reference font size of ol or ul and if there is a nested list within
+    the first list, that font will be 110% the size of the list font above. incrementally enlarging */
+  }
+
+  /* images can be altered to adjust color as well */
+ 
+  .gradient {
+    background-image: linear-gradient(90deg, rgb(119 0 255 / 39%), rgb(0 212 255 / 100%));
+  }
+  /* This creates a blending effect of the two colors . The opacity changes how gradually the two blend */
+  /* the degrees references the angle of the blending line. 90deg is verticle */
+
+
+  /*IMG Positioning: */
+  .box {
+    height: 300px;
+    width: 400px; /* dimensions */
+    background-image: url(star.png);
+    background-repeat: no-repeat; /* Removes repeat */
+    background-position: right 40px; /* px controls the vertical axis */
+  }
+
+  /* strings in css */
+
+  .box {
+    width:400px;
+    padding: 1em;
+    border-radius: .5em;
+    border: 5px solid rebeccapurple;
+    background-color: lightblue;
+  }
+  .box::after {
+    content: "This is a string. I know because it is quoted in the CSS."
+    /* inserts string into the box */
+  }

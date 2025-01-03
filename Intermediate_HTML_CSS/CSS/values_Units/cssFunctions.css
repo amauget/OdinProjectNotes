@@ -1,0 +1,35 @@
+/* Transform functions:
+
+A common way to move, rotate and scale elements on the page
+
+ex.
+translate() moves something up down or sideways
+rotate()
+scale()
+*/
+
+
+
+/* Math Functions:
+Sizes of elements can be made to vary based on other element traits.
+
+thats where calc() comes in.
+ex.
+let's say we want to set the width of an element to be 20% of its parent container plus 100px
+*/
+.wrapper {
+    width: 400px;
+  }
+  
+  .box {
+    width: calc(20% + 100px);
+  }
+
+  /* Other math functions;
+  min()
+  max()
+  clamp() 
+  stand for smallest largest and middle value of a set of values.*/
+
+  /* sin(), cos(), tan() to calculate angles.
+    Exponential functions can be used for animations and transitions */

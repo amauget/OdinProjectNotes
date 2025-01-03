@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#">
+  <script>
+  const img = document.querySelector('img');
+
+  fetch('https://api.giphy.com/v1/gifs/translate?api_key=vzHJ1H8eKSKlAXIvb5e0V6knNLRCzNju&s=cats')
+    .then(function(response){
+      return (response.json()); /* Accesses JSON. start w/ console.log(to find keys) */
+    })
+    .then(function(response){
+      return response = response.data.images.original.url; /* dig to URL and return */
+    })
+    .then(function (response){
+      img.src = response; /* set response as url */
+    })
+  </script>
+</body>
+<!-- /* 'https://api.giphy.com/v1/gifs/translate?api_key=vzHJ1H8eKSKlAXIvb5e0V6knNLRCzNju&s=cats'
+// of course we're searching for cats
+ */
+
+/* CORS : Cross Origin Resource Sharing, allows you to fetch a specific obj.
+comes right after url
+
+fetch('url.url.com/api', {
+  mode: 'cors'
+}); -->
+</html>

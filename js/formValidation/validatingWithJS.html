@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation#validating_forms_using_javascript
+
+validationMessage: returns a localized message describing the validation
+  constraints that the target doesn't satisfy. If satisfied, will return empty string.
+
+validty: returns ValidityState obj that contains several properties describing the validity 
+  state of the element.
+
+    If invalid property is met, item returns true.
+
+    obj items:
+
+    patternMismatch
+
+    tooLong/tooShort
+
+    rangeOverflow: value is greater than maximum (number inputs)
+
+    rangeUnderflow:
+
+    typeMismatch: value is not in the the required syntax( ex. type = email and doesn't have @provider.com);
+
+    valid:
+
+    valueMissing
+
+    willValidate: true if element will be validated when the form is submitted.
+
+    checkValidity: returns true if element value has no validity
+
+    reportValidity: reports invalid field(s) using events.
+
+    setCustomValidity(message): adds a cust -->
+
+  <form>
+    <label for="mail">
+      I would like you to provide me with an email address:
+    </label>
+    <input type="email" id="mail" name="mail">
+    <button>Submit</button>
+  </form>
+ 
+</body>
+<script>
+  const email = document.querySelector('#mail');
+
+  email.addEventListener('input', (event) =>{
+    if(email.validity.typeMismatch){
+      email.setCustomValidity("I am expecting an email address!");
+    }else{
+      email.setCustomValidity('');
+    }
+  })
+</script>
+</html>

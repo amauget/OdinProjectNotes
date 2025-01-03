@@ -1,0 +1,67 @@
+<!-- repeat -->
+grid-template-rows: repeat(2, 1fr) <!-- 2 rows at 1/2 fraction per row -->
+
+<!-- repeat with different dimensional aspects -->
+grid-template-columns: repeat(2, 2fr) repeat(3, 1fr); 
+<!-- 5 rows 2 @ 2fr & 3 @1fr -->
+
+<!-- can mix static and dynamic units. Be careful to allow for dynamic UI -->
+
+
+<!-- MIN() & MAX() have no limit to the amount of args-->
+grid-template-rows: repeat(2, min(100px, 200px, 300px, 400px, 500px));
+<!-- giving a static min to each row 
+    IF MIN USES STATIC ARGS THEN MAX SHOULD TOO
+-->
+grid-template-columns: repeat(5, minmax(150px, 200px));
+
+
+
+
+<!-- CLAMP(): can be used anywhere, not just in grid container -->
+
+<!-- clamp(minimum-size, ideal-size, maximum-size) -->
+.non-grid-example {
+    width: clamp(500px, 80%, 1000px);
+  } <!-- This element will present a width that is 80% of its parent,
+        with a min of 500px and max of 1000px -->
+
+
+<!-- Can be used inline with grid repeat -->
+.grid-container {
+    grid-template-columns: repeat(5, clamp(150px, 20%, 200px));
+  }
+
+
+
+<!-- AUTOFIT() & AUTOFILL(): are part of the repeat() function spec and associated with minmax()
+        both of these functions will return “the largest possible positive integer” without the grid items 
+        overflowing their container. Here is an example:  -->
+
+        .example {
+            display: grid;
+            width: 1000px;
+            grid-template-columns: repeat(auto-fit, 200px);
+          }
+          <!-- the grid has a width of 1000px. We are telling it to fill our
+                columns with tracks of 200px each. As long as there are at least 5 grid items.
+                This will create 5 columns that fit container no matter what -->
+
+
+
+<!-- Use with minmax() to tell the grid to add as many columns as possible to
+    determine each column size without overflow -->
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+
+<!-- Cases where AUTOFILL() works different than AUTOFIT() 
+
+        When the grid is expanded to a size where another grid item could fit, but there aren’t any left, 
+        auto-fit will prevent items from stretching to fill the container-->
+
+        <!-- EXAMPLES:
+        AUTOFIT(): https://codepen.io/TheOdinProjectExamples/pen/mdByJyJ
+    
+        AUTOFILL(): https://codepen.io/TheOdinProjectExamples/pen/KKXwpwX-->

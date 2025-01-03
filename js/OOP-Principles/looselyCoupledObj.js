@@ -1,0 +1,6 @@
+/* Loosely Coupled Objects are always the goal. They are stand alone
+  
+    Tightly coupled obj are objects that rely so heavily on each other that
+    removing or changing one will mean that you have to completely change
+    another one.
+*/

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div class="circle"></div>
+</body>
+<script>
+/* practice 1 */
+  function delay(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  // delay(3000).then(() =>{alert('runs after 3 seconds.')})
+
+/* practice 2 */
+  function showCircle(x,y, radius){
+
+  }
+</script>
+<style>
+     .circle {
+      transition-property: width, height;
+      transition-duration: 2s;
+      position: fixed;
+      transform: translateX(-50%) translateY(-50%);
+      background-color: red;
+      border-radius: 50%;
+
+      width: 200px;
+      height: 200px;
+      top: 150px;
+      left: 150px;
+    }
+</style>
+</html>

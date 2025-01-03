@@ -1,0 +1,42 @@
+/* The border property is another shorthand, 
+but it is much less complicated than the background shorthand. 
+For borders, basically you just need to define a size, style and color. */
+
+div {
+    border: 0.5rem outset pink;/* This is the actual defined border */ 
+    outline: 0.5rem solid khaki; /* This is what outlines the border. */
+    box-shadow: 0 0 0 2rem skyblue; /* This acts more so as a backdrop to the border */
+    border-radius: 12px;
+    font: bold 1rem sans-serif;
+    margin: 2rem;
+    padding: 1rem;
+    outline-offset: 0.5rem; /* Gaps the outline, showing box-shadow between border and outline */
+  }
+
+
+/* Border-Radius */
+/* Radius can be uniformly defined or indicated for 
+each corner. */
+
+border-radius:30px; /* Rounds every corner equally */
+
+border-radius: 10% 30% 50% 70%; /* Gives a definition for each corner */
+
+/* (first radius values) / top-left-and-bottom-right | top-right-and-bottom-left */
+border-radius: 10px 5% / 20px 30px;
+
+/* (first radius values) / top-left | top-right-and-bottom-left | bottom-right */
+border-radius: 10px 5px 2em / 20px 25px 30%;
+
+/* (first radius values) / top-left | top-right | bottom-right | bottom-left */
+border-radius: 10px 5% / 20px 25em 30px 35em;
+
+/* MORE SYNTAX EXPLANATION:
+ */
+ border-radius: 4px 3px 6px / 2px 4px;
+
+/* It is equivalent to: */
+border-top-left-radius: 4px 2px;
+border-top-right-radius: 3px 4px;
+border-bottom-right-radius: 6px 2px;
+border-bottom-left-radius: 3px 4px;

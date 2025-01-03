@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="wrapper"> 
+    <h1>Title</h1>
+</div>
+<!-- Remove Tag 'wrapper' via ctrl+k -->
+
+<!-- shortcuts -->
+<!--.class or #id example because div is most used element.-->
+.class
+<div class="class"></div>
+#id
+<div id="id"></div>
+
+link.class
+<link rel="stylesheet" href="" class="class">
+
+button[type="button"]
+<button type="button"></button>
+
+[data-selected].active
+<div data-selected="" class="active"></div>
+
+<!-- Child Elements -->
+<!-- > is used to indicate child elements. -->
+.purple>span.cyan
+<div class="purple"><span class="cyan"></span></div>
+
+
+<!-- use $ sign to number text. {$asdf} -->
+header>nav>ul>li*3{list item $} <!-- $ sign numbers text items-->
+
+<header>
+    <nav>
+        <ul>
+            <li>list item 1</li>
+            <li>list item 2</li>
+            <li>list item 3</li>
+        </ul>
+    </nav>
+</header> 
+
+<!-- create header main & footer siblings NO Children -->
+header+main+footer
+<header></header>
+<main></main>
+<footer></footer>
+
+<!-- w/child element. In header without making everything after a child element -->
+(header>nav)main+footer
+<header>
+    <nav>Child of header and not main or footer</nav>
+</header>
+<main></main>
+<footer></footer>
+
+<!-- Putting it all together -->
+(header>h2{Heading}+nav>ol>li*3>a{link $})+main+footer
+<header>
+    <h2>Heading</h2>
+    <nav>
+        <ol>
+            <li><a href="">link 1</a></li>
+            <li><a href="">link 2</a></li>
+            <li><a href="">link 3</a></li>
+        </ol>
+    </nav>
+</header>
+<main></main>
+<footer></footer>
+
+
+</body>
+</html>

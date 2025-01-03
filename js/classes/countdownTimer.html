@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Create a CountdownTimer class that accepts a duration in seconds 
+  and provides methods to start, stop, and reset the countdown timer. 
+  The timer should display the remaining time in a specified format 
+  (hh:mm:ss) and call a callback function when the timer reaches zero. -->
+
+  <!--
+    Requirements:
+
+    The CountdownTimer class should be initialized with a duration 
+    parameter (in seconds) and an optional onTimerComplete callback 
+    function.
+
+    Implement methods start(), stop(), and reset() to control the timer's 
+    behavior.
+
+    Display the remaining time in the format hh:mm:ss using a render() 
+    method.
+
+    When the timer reaches zero, execute the onTimerComplete callback 
+    if provided.
+    -->
+</body>
+<script>
+  class CountdownTimer{
+    constructor(){
+      this.duration = duration;
+      this.timerComplete = timerComplete
+      this.timer = null;
+    }
+    renderTimer(h){
+      let hour = this.setTime(h * 3600);
+      
+    }
+  }
+  
+  let time = new CountdownTimer(4);
+  time.renderTimer()
+</script>
+</html>

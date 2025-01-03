@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="#" alt=""> <!-- This is needed for images to work! -->
+  <label for="search">Search Gifs</label>
+  <input type="search" id="search" value="dog">
+  <button>search</button>
+  <div class="selected"></div>
+  <div class="resultContainer"></div>
+
+</body>
+<script>
+  // 
+  let submit = document.querySelector('button');
+
+  submit.addEventListener('click', () =>{
+    let searchQuery = document.querySelector('input').value
+    retrieveSearch(searchQuery)
+  })
+
+  async function retrieveSearch(searchQuery){
+      const resultContainer = document.querySelector('.resultContainer');
+      const searchResult = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=vzHJ1H8eKSKlAXIvb5e0V6knNLRCzNju&q=${searchQuery}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`)
+        
+      searchResult.json().then(function(searchResult){
+        try{
+          let results = (searchResult.data)
+        resultContainer.innerHTML = '';
+        for(let i = 0; i < 8; i++ ){
+          let address = results[i].images.original.url;
+      
+          let img = document.createElement('img');
+          img.src = address
+
+          resultContainer.appendChild(img);
+        
+        } 
+        }catch(error){
+          alert('No search results matching your query')
+        }
+     
+
+      
+      })
+      
+  }
+
+</script>
+</html>

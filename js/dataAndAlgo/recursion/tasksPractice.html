@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  /* Write a function sumTo(n) that calculates the sum of numbers 1 + 2 + ... + n. */
+
+  function sumTo(num){
+    if(num - 1 === 0 ){
+      return num
+    }
+    else{
+      return num += sumTo(num-1) /* keeps calling until if statement is met, then runs returns up the stack */
+    }
+  }
+
+  // console.log(sumTo(5))
+
+
+  /* We can write a definition of factorial like this:
+      n! = n * (n - 1) * (n - 2) * ...*1 */
+  
+  function factorial(n){
+    if(n-1 === 1){
+      return n;
+    }
+    else{
+      return n *= factorial(n-1)
+    }
+  }
+
+/*   console.log(factorial(5))
+ */
+ 
+ /* The sequence of Fibonacci numbers has the formula Fn = Fn-1 + Fn-2. 
+ In other words, the next number is a sum of the two preceding ones. */
+
+ /*  7 => 13  This can be thought of as array[7] = 13
+  7 => [1, 1, 2, 3, 5, 8, 13]
+        always starts w/ 1, 1
+        then 1+1, 2+3, 3+5, 5+8
+ */
+
+ function fibonacci(n){ /* 3 => 2      */
+  if(n < 3){
+    return n = 1;
+  }
+  else{
+    return n = (fibonacci(n-1) + fibonacci(n-2));
+  }
+ }
+//  console.log(fibonacci(6))
+/* This function works but is slow. Here is a faster version using iteration: */
+function fib(n) {
+  let a = 1;
+  let b = 1;
+  for (let i = 3; i <= n; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
+}
+ </script>
+</html>
