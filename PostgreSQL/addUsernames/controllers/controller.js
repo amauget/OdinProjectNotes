@@ -1,7 +1,7 @@
 const db = require('../db/queries')
 
 async function getUsernames(){
-    const usernames = await db.getAllUsernames() //progre converts your db functions into built-in db functions
+    const usernames = await db.getAllUsernames() //posgre converts your db functions into built-in db functions
     console.log('Usernames: ', usernames)
 
     res.send('usernames ' + usernames.map(user => user.username).join(', '))
@@ -9,7 +9,7 @@ async function getUsernames(){
 
 async function searchUserName(query){
     const result = await db.searchUserName(query)
-    console.log(result)
+    return result
 }
 
 async function createUsernameGet(req, res){

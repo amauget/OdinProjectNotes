@@ -7,7 +7,8 @@ router.get('/', (req, res) => {
     const query = req.query.searchInput
     console.log('searching...')
     const result = searchUserName(query)
-    res.render('index')
+
+    res.render('index', {result})
 })
 
 router.get('/new', (req, res) => {
